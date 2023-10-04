@@ -7,8 +7,8 @@ using UnityEngine.SceneManagement;
 
 public class BattleController : MonoBehaviour
 {
-    
 
+  
 
 
     // Start is called before the first frame update
@@ -26,7 +26,7 @@ public class BattleController : MonoBehaviour
 
     public void SwordAttack()
     {
-        Debug.Log("Hiya!");
+        SceneManager.LoadScene(sceneName: "SwordCombatGameScene");
     }
 
 }
