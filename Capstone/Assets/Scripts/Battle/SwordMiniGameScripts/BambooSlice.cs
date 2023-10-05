@@ -4,19 +4,18 @@ using UnityEngine;
 
 public class BambooSlice : MonoBehaviour
 {
-    public bool bambooDestroyed = false;
-
- 
+    public SpawnBamboo spawnBamboo;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+       // spawnBamboo = GameObject.FindGameObjectWithTag("Spawner").GetComponent<SpawnBamboo>();
     }
 
     // Update is called once per frame
     void Update()
     {
+      
         
     }
 
@@ -24,12 +23,15 @@ public class BambooSlice : MonoBehaviour
     {
         if(col.tag == "Player")
         {
-            Debug.Log("PEWGHHHH");
-            bambooDestroyed = true;
-            Debug.Log("BambooDestroyed " + bambooDestroyed);
+          
            Destroy(gameObject);
-       
            
         }
+    }
+
+    private void OnDestroy()
+    {
+        spawnBamboo.CreateBamboo();
+
     }
 }

@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Sword : MonoBehaviour
 {
-    public BambooSlice bambooSlice;
+   
     private bool isCutting = false;
     [SerializeField] private float minCuttingSpeed = 0.001f;
     [SerializeField] private GameObject bamboo;
@@ -15,7 +15,7 @@ public class Sword : MonoBehaviour
     private Camera cam;
     private Rigidbody2D rb;
     private CircleCollider2D circle;
-    private float timer = 0.02f;
+   
 
     // Start is called before the first frame update
     void Start()
@@ -23,6 +23,7 @@ public class Sword : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         circle = GetComponent<CircleCollider2D>();
         cam = Camera.main;
+       
     }
 
     // Update is called once per frame
@@ -42,17 +43,8 @@ public class Sword : MonoBehaviour
             UpdateBlade();
         }
 
-        Debug.Log(bambooSlice.bambooDestroyed);
+        bamboo.SetActive(true);
 
-        if(bambooSlice.bambooDestroyed)
-        {
-            timer -= Time.time;
-            Debug.Log(timer);
-            if(timer <= 0) 
-            {
-                RespawnBamboo();
-            }
-        }
 
     }
 
@@ -89,9 +81,6 @@ public class Sword : MonoBehaviour
         prevPosition = newPosition;
     }
 
-    void RespawnBamboo()
-    {
-        Instantiate(bamboo);
-    }
+  
 
 }

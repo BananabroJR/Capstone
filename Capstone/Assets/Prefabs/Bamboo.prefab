@@ -114,4 +114,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dcbe29e35e7df6347a204edb4743a660, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bambooDestroyed: 0
+  spawnBamboo: {fileID: 5729146115078549131, guid: 07dced8dbe5489340844f73b0779345b, type: 3}
