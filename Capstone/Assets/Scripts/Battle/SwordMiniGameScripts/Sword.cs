@@ -43,7 +43,7 @@ public class Sword : MonoBehaviour
             UpdateBlade();
         }
 
-        bamboo.SetActive(true);
+        
 
 
     }

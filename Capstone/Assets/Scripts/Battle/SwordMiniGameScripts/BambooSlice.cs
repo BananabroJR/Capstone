@@ -4,18 +4,26 @@ using UnityEngine;
 
 public class BambooSlice : MonoBehaviour
 {
-    public SpawnBamboo spawnBamboo;
+   
+
+    
+  
+ 
+
+    private Vector2 velocity = Vector2.zero;
+    private Vector2 direction = Vector2.zero;
 
     // Start is called before the first frame update
     void Start()
     {
-       // spawnBamboo = GameObject.FindGameObjectWithTag("Spawner").GetComponent<SpawnBamboo>();
+      
     }
 
     // Update is called once per frame
     void Update()
     {
-      
+
+        
         
     }
 
@@ -27,11 +35,18 @@ public class BambooSlice : MonoBehaviour
            Destroy(gameObject);
            
         }
+
+      
     }
 
     private void OnDestroy()
     {
-        spawnBamboo.CreateBamboo();
+       
 
+    }
+
+    private void OnApplicationQuit()
+    {
+       Destroy(gameObject);
     }
 }
