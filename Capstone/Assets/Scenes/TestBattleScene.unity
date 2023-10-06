@@ -336,6 +336,7 @@ GameObject:
   - component: {fileID: 360714134}
   - component: {fileID: 360714133}
   - component: {fileID: 360714132}
+  - component: {fileID: 360714135}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -426,6 +427,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &360714135
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 360714131}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5baab42d6ab6f934ab54f498efdcb90d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 5
+  enemyAmount: 1
 --- !u!1 &366662713
 GameObject:
   m_ObjectHideFlags: 0
@@ -1565,6 +1580,7 @@ GameObject:
   - component: {fileID: 1733605795}
   - component: {fileID: 1733605797}
   - component: {fileID: 1733605798}
+  - component: {fileID: 1733605799}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1667,6 +1683,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4dfd21dbe385d6742a4768f7ac53abec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damage: 1
+--- !u!114 &1733605799
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1733605794}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9a0f4336c49bd342abddea09c64ddcf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  battleController: {fileID: 1733605798}
+  enemy: {fileID: 360714135}
 --- !u!1 &1754537424
 GameObject:
   m_ObjectHideFlags: 0

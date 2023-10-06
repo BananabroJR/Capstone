@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Data;
+using System.Runtime.InteropServices.WindowsRuntime;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -10,6 +12,7 @@ public class BattleMinigameResults : MonoBehaviour
     public BattleEnemy enemy;
 
     private bool hit = false;
+    private bool crit = false;
 
     // Start is called before the first frame update
     void Start()
@@ -24,14 +27,21 @@ public class BattleMinigameResults : MonoBehaviour
         if(enemy.enemyAmount <= 0)
         {
             SceneManager.LoadScene(sceneName: "TestOverWorldScene");
+            
         }
 
         if(BambooSpawner.wentToSword)
         {
            hit = SwordMiniGameResults(BambooSpawner.score);
+            crit = SwordCritResults(BambooSpawner.score);
 
             if(hit)
             {
+                if(crit)
+                {
+                    battleController.damage *= 2;
+                    crit = false;
+                }
                 enemy.Damage(battleController.damage);
                 hit = false;
             }
@@ -51,10 +61,7 @@ public class BattleMinigameResults : MonoBehaviour
             {
                 return true;
             }
-            else
-            {
-                return false;
-            }
+          
         }
         if (score == 4 || score == 5)
         {
@@ -63,27 +70,36 @@ public class BattleMinigameResults : MonoBehaviour
             {
                 return true;
             }
-            else
-            {
-                return false;
-            }
+          
         }
         if (score == 6 || score == 7)
         {
             int hitChance = Random.Range(0, 3);
-            if (hitChance == 0)
-            {
-                return false;
-            }
-            else
+            if (hitChance < 0)
             {
                 return true;
             }
+
         }
         if (score >= 8)
         {
             return true;
 
+        }
+
+        return false;
+    }
+
+    private bool SwordCritResults(int score)
+    {
+        if (score <= 8)
+        {
+            int critChance = Random.Range(0, 9);
+            if (critChance == 0)
+            {
+                return true;
+
+            }
         }
 
         return false;
