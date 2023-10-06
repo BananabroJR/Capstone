@@ -4,14 +4,7 @@ using UnityEngine;
 
 public class BambooSlice : MonoBehaviour
 {
-   
-
-    
   
- 
-
-    private Vector2 velocity = Vector2.zero;
-    private Vector2 direction = Vector2.zero;
 
     // Start is called before the first frame update
     void Start()
@@ -39,10 +32,9 @@ public class BambooSlice : MonoBehaviour
       
     }
 
-    private void OnDestroy()
+    private static void OnDestroy()
     {
        
-
     }
 
     private void OnApplicationQuit()
