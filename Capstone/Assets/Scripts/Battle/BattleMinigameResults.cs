@@ -50,10 +50,7 @@ public class BattleMinigameResults : MonoBehaviour
 
     private bool SwordMiniGameResults(int score)
     {
-        if(score == 0 || score == 1)
-        {
-            return false;
-        }
+      
         if(score == 2 || score == 3)
         {
             int hitChance = Random.Range(0, 3);
