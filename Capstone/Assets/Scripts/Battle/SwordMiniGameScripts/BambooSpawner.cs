@@ -7,12 +7,13 @@ public class BambooSpawner : MonoBehaviour
 {
     [SerializeField] private GameObject bamboo;
 
-    private float timer = 10;
+    private float timer = 5;
 
     private GameObject newBamboo;
 
    public static int score = 0;
     public static bool wentToSword = false;
+    public static float counter = 0f;
     
 
     // Start is called before the first frame update
@@ -20,6 +21,7 @@ public class BambooSpawner : MonoBehaviour
     {
         newBamboo = Instantiate(bamboo, transform.position, transform.rotation);
         wentToSword=true;
+        counter++;
     }
 
     // Update is called once per frame

@@ -11,30 +11,35 @@ public class BattleMinigameResults : MonoBehaviour
     public BattleController battleController;
     public BattleEnemy enemy;
 
+
+    private float tempEnemyHealth;
     private bool hit = false;
     private bool crit = false;
+    private float counter = 0;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+       
     }
 
     // Update is called once per frame
     void Update()
     {
-
+     
         if(enemy.enemyAmount <= 0)
         {
             SceneManager.LoadScene(sceneName: "TestOverWorldScene");
+            MainManager.instance.enemyHealth = enemy.defaultHealth;
             
         }
 
         if(BambooSpawner.wentToSword)
         {
-           hit = SwordMiniGameResults(BambooSpawner.score);
+            hit = SwordMiniGameResults(BambooSpawner.score);
             crit = SwordCritResults(BambooSpawner.score);
 
+            Debug.Log(hit);
             if(hit)
             {
                 if(crit)
@@ -43,8 +48,13 @@ public class BattleMinigameResults : MonoBehaviour
                     crit = false;
                 }
                 enemy.Damage(battleController.damage);
+              
+                counter++;
+              
                 hit = false;
             }
+            BambooSpawner.wentToSword= false;
+            BambooSpawner.score = 0;
         }
     }
 
@@ -89,15 +99,15 @@ public class BattleMinigameResults : MonoBehaviour
 
     private bool SwordCritResults(int score)
     {
-        if (score <= 8)
-        {
-            int critChance = Random.Range(0, 9);
-            if (critChance == 0)
-            {
-                return true;
+      //  if (score <= 8)
+       // {
+        //    int critChance = Random.Range(0, 9);
+         //   if (critChance == 0)
+          //  {
+           //     return true;
 
-            }
-        }
+//            }
+ //       }
 
         return false;
     }

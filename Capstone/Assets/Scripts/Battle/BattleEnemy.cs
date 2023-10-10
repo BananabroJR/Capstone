@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BattleEnemy : MonoBehaviour
 {
-    [SerializeField] private float health;
+    [SerializeField] public float defaultHealth;
     public float enemyAmount = 1;
 
   
@@ -18,7 +18,7 @@ public class BattleEnemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(health <= 0)
+        if(MainManager.instance.enemyHealth <= 0)
         {
             Destroy(gameObject);
             enemyAmount--;
@@ -27,7 +27,7 @@ public class BattleEnemy : MonoBehaviour
 
     public void Damage(float damage)
     {
-        health -= damage;
+        MainManager.instance.enemyHealth -= damage;
     }
 
 }
