@@ -30,7 +30,7 @@ public class BattleMinigameResults : MonoBehaviour
         if(enemy.enemyAmount <= 0)
         {
             SceneManager.LoadScene(sceneName: "TestOverWorldScene");
-            MainManager.instance.enemyHealth = enemy.defaultHealth;
+            GameManager.instance.enemyHealth = enemy.defaultHealth;
             
         }
 

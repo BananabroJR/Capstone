@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MainManager : MonoBehaviour
+public class GameManager : MonoBehaviour
 {
 
-    public static MainManager instance;
+    public static GameManager instance;
 
     public float enemyHealth;
 

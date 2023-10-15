@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class OverworldCharacterController : MonoBehaviour
 {
     //Variables that are public (if any)
-
+   
     //Variables that are supposed to be serialized
     [SerializeField] private float speed;
 
@@ -24,6 +24,8 @@ public class OverworldCharacterController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (DialougeManager.isActive) return;
+
         Vector2 direction = Vector2.zero;
 
         direction.x = Input.GetAxisRaw("Horizontal");
@@ -34,6 +36,8 @@ public class OverworldCharacterController : MonoBehaviour
 
         rb.velocity = velocity;
 
+      
+       
         
     }
 
@@ -43,5 +47,9 @@ public class OverworldCharacterController : MonoBehaviour
         {
             SceneManager.LoadScene(sceneName: "TestBattleScene");
         }
+
     }
+
+
 }
+

@@ -18,7 +18,7 @@ public class BattleEnemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(MainManager.instance.enemyHealth <= 0)
+        if(GameManager.instance.enemyHealth <= 0)
         {
             Destroy(gameObject);
             enemyAmount--;
@@ -27,7 +27,7 @@ public class BattleEnemy : MonoBehaviour
 
     public void Damage(float damage)
     {
-        MainManager.instance.enemyHealth -= damage;
-    }
+        GameManager.instance.enemyHealth -= damage;
+    }   
 
 }
