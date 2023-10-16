@@ -50,12 +50,12 @@ public class OverworldCharacterController : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Z)) 
         {
             menuOpen = true;
-            menu.LeanScale(Vector3.one, 0.5f);
+            menu.LeanScale(Vector3.one, 0);
         }
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             menuOpen = false;
-            menu.LeanScale(Vector3.zero, 0.5f);
+            menu.LeanScale(Vector3.zero, 0f);
         }
 
 
