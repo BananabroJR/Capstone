@@ -15,6 +15,7 @@ public class BattleMinigameResults : MonoBehaviour
     private float tempEnemyHealth;
     private bool hit = false;
     private bool crit = false;
+    private bool ran = false;
     private float counter = 0;
 
     // Start is called before the first frame update
@@ -32,6 +33,18 @@ public class BattleMinigameResults : MonoBehaviour
             SceneManager.LoadScene(sceneName: "TestOverWorldScene");
             GameManager.instance.enemyHealth = enemy.defaultHealth;
             
+        }
+
+        if(MazeControl.wentToRun)
+        {
+            if(MazeControl.result)
+            {
+                RunAway();
+            }
+            else
+            {
+                Debug.Log("How many times are you gonna run away? I captured 17 different times!");
+            }
         }
 
         if(BambooSpawner.wentToSword)
@@ -95,6 +108,11 @@ public class BattleMinigameResults : MonoBehaviour
         }
 
         return false;
+    }
+
+    private void RunAway()
+    {
+        SceneManager.LoadScene(sceneName: "TestOverWorldScene");
     }
 
     private bool SwordCritResults(int score)
