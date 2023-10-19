@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SwordCombatGameScene.unity
     guid: 499d9867eeaa2b044a00496626b99ab3
+  - enabled: 1
+    path: Assets/Scenes/RunCombatGameScene.unity
+    guid: 694d5f9a4786dc94b82b5c39455fbdbe
   m_configObjects: {}

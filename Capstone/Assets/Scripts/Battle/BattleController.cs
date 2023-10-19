@@ -17,4 +17,9 @@ public class BattleController : MonoBehaviour
         SceneManager.LoadScene(sceneName: "SwordCombatGameScene");
     }
 
+    public void RunAway()
+    {
+        SceneManager.LoadScene(sceneName: "RunCombatGameScene");
+    }
+
 }
