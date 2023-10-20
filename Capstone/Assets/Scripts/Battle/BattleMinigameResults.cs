@@ -45,6 +45,8 @@ public class BattleMinigameResults : MonoBehaviour
             {
                 Debug.Log("How many times are you gonna run away? I captured 17 different times!");
             }
+
+            MazeControl.wentToRun = false;
         }
 
         if(BambooSpawner.wentToSword)
