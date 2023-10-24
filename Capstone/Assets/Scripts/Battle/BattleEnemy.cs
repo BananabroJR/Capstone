@@ -5,7 +5,7 @@ using UnityEngine;
 public class BattleEnemy : MonoBehaviour
 {
     [SerializeField] public float defaultHealth;
-    public float enemyAmount = 1;
+    public static float enemyAmount = 1;
 
   
 

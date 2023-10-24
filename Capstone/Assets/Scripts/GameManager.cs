@@ -9,6 +9,8 @@ public class GameManager : MonoBehaviour
 
     public float enemyHealth;
 
+    
+
     private void Awake()
     {
         if(instance != null)
