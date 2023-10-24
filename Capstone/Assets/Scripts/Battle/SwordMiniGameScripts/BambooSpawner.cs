@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class BambooSpawner : MonoBehaviour
 {
@@ -11,9 +12,11 @@ public class BambooSpawner : MonoBehaviour
 
     private GameObject newBamboo;
 
-   public static int score = 0;
+    public static int score = 0;
     public static bool wentToSword = false;
     public static float counter = 0f;
+
+  
     
 
     // Start is called before the first frame update
@@ -27,6 +30,7 @@ public class BambooSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         timer -= Time.deltaTime;
 
         if(newBamboo == null)

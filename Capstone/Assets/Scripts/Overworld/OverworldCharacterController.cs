@@ -29,12 +29,14 @@ public class OverworldCharacterController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Dont move if talking
         if (DialougeManager.isActive)
         {
             rb.velocity = Vector2.zero;
             return;
         }
 
+        //Schmovement
         Vector2 direction = Vector2.zero;
 
         direction.x = Input.GetAxisRaw("Horizontal");
@@ -47,6 +49,8 @@ public class OverworldCharacterController : MonoBehaviour
             rb.velocity = velocity;
         }
 
+
+        //Open Menu
         if(Input.GetKeyDown(KeyCode.Z)) 
         {
             menuOpen = true;
