@@ -22,4 +22,9 @@ public class BattleController : MonoBehaviour
         SceneManager.LoadScene(sceneName: "RunCombatGameScene");
     }
 
+    public void Defend() 
+    {
+        SceneManager.LoadScene(sceneName: "DefendCombatGameScene");
+    }
+
 }

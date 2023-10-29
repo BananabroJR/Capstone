@@ -34,7 +34,7 @@ public class DialougeManager : MonoBehaviour
         currentActors = actors;
         activeMessage = 0;
         isActive = true;
-        Debug.Log("FUCK YOU");
+      
 
         DisplayMessage();
 
@@ -58,7 +58,7 @@ public class DialougeManager : MonoBehaviour
         }
         else
         {
-            Debug.Log("NOW GOOD RIDDENCE");
+           
             isActive= false;
             box.LeanScale(Vector3.zero, 0.5f);
 
