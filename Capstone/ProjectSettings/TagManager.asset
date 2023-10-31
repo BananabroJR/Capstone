@@ -8,6 +8,7 @@ TagManager:
   - Spawner
   - Floor
   - Friendly
+  - Item
   layers:
   - Default
   - TransparentFX

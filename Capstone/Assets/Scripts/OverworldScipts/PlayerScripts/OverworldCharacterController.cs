@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -13,17 +14,20 @@ public class OverworldCharacterController : MonoBehaviour
     //Variables that are supposed to be serialized
     [SerializeField] private float speed;
     [SerializeField] private RectTransform menu;
+    [SerializeField] private RectTransform inventory;
 
     //variables that will not show up in the untiy inspector
     private Vector2 velocity = Vector2.zero;
     private Rigidbody2D rb;
     private bool menuOpen = false;
+    private bool inventoryOpen = false;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         menu.transform.localScale = Vector3.zero;
+        inventory.transform.localScale = Vector3.zero;
     }
 
     // Update is called once per frame
@@ -58,13 +62,29 @@ public class OverworldCharacterController : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            menuOpen = false;
-            menu.LeanScale(Vector3.zero, 0f);
+            if(!inventoryOpen)
+            {
+                menuOpen = false;
+                menu.LeanScale(Vector3.zero, 0f);
+            }
+
+            if(inventoryOpen)
+            {
+                inventoryOpen= false;
+                inventory.LeanScale(Vector3.zero, 0f);
+                
+            }
         }
 
 
 
 
+    }
+
+    public void OpenInventory()
+    {
+        inventoryOpen = true;
+        inventory.LeanScale(Vector3.one, 0);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
