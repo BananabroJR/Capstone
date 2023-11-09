@@ -4,12 +4,23 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine.SceneManagement;
+using UnityEngine.UIElements;
+using UnityEditor;
 
 public class BattleController : MonoBehaviour
 {
+
+    
     
 
-    public float damage;
+    private bool inventoryOpen = false;
+
+    [SerializeField] private RectTransform inventory;
+
+    private void Start()
+    {
+        inventory.transform.localScale = Vector3.zero;
+    }
 
     public void SwordAttack()
     {
@@ -25,6 +36,22 @@ public class BattleController : MonoBehaviour
     public void Defend() 
     {
         SceneManager.LoadScene(sceneName: "DefendCombatGameScene");
+    }
+
+    private void Update()
+    {
+        if (inventoryOpen && Input.GetKeyDown(KeyCode.Escape))
+        {
+            inventoryOpen = false;
+            inventory.LeanScale(Vector3.zero, 0f);
+
+        }
+    }
+
+    public void OpenInventory()
+    {
+        inventoryOpen = true;
+        inventory.LeanScale(Vector3.one, 0);
     }
 
 }

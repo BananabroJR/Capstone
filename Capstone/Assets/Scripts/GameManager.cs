@@ -6,13 +6,18 @@ public class GameManager : MonoBehaviour
 {
 
     public static GameManager instance;
+    public StatObject playerStats;
+    public StatObject enemyStats;
+    public InventoryObject inventory;
 
-    public float enemyHealth;
-
+  
+   
     
 
     private void Awake()
     {
+
+
         if(instance != null)
         {
             Destroy(gameObject);
@@ -21,5 +26,8 @@ public class GameManager : MonoBehaviour
 
         instance = this;
         DontDestroyOnLoad(gameObject);
+        
     }
+
+   
 }

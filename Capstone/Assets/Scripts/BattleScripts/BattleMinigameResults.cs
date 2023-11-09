@@ -10,13 +10,14 @@ public class BattleMinigameResults : MonoBehaviour
     //This script is to take the results from all the different battle minigames and translate them to rng
     public BattleController battleController;
     public BattleEnemy enemy;
-
+    public StatObject playerStats;
+    public StatObject enemyStats;
 
     private float tempEnemyHealth;
     private bool hit = false;
     private bool crit = false;
     private bool ran = false;
-    private float counter = 0;
+
 
     // Start is called before the first frame update
     void Start()
@@ -27,11 +28,11 @@ public class BattleMinigameResults : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-     
+       // Debug.Log(enemyStats.Health);
         if(BattleEnemy.enemyAmount <= 0)
         {
             SceneManager.LoadScene(sceneName: "TestOverWorldScene");
-            GameManager.instance.enemyHealth = enemy.defaultHealth;
+           
             
         }
 
@@ -59,12 +60,12 @@ public class BattleMinigameResults : MonoBehaviour
             {
                 if(crit)
                 {
-                    battleController.damage *= 2;
+                   // battleController.damage *= 2;
                     crit = false;
                 }
-                enemy.Damage(battleController.damage);
+               enemyStats.Damage(playerStats.strength - enemyStats.defense);
               
-                counter++;
+                
               
                 hit = false;
             }

@@ -4,10 +4,16 @@ using UnityEngine;
 
 public class BattleEnemy : MonoBehaviour
 {
-    [SerializeField] public float defaultHealth;
+   
     public static float enemyAmount = 1;
 
-  
+    private float health;
+    private float mana;
+    private float strength;
+    private float magic;
+    private float defense;
+    
+    public StatObject stats;
 
     // Start is called before the first frame update
     void Start()
@@ -18,16 +24,15 @@ public class BattleEnemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(GameManager.instance.enemyHealth <= 0)
+       
+        if(stats.health <= 0)
         {
-            Destroy(gameObject);
+           Destroy(gameObject);
             enemyAmount--;
         }
     }
 
-    public void Damage(float damage)
-    {
-        GameManager.instance.enemyHealth -= damage;
-    }   
+  
+
 
 }

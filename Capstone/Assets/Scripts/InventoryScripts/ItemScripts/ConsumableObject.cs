@@ -5,7 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "ConsumableObject")]
 public class ConsumableObject : ItemObject
 {
-    public int restoreHealthValue;
+    [SerializeField] private int restoreHealthValue;
     
 
     private void Awake()
