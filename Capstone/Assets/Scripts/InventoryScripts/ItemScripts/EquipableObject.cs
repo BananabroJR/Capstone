@@ -5,10 +5,12 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "EquipableObject")]
 public class EquipableObject : ItemObject
 {
-    public int might;
-    public int protection;
+    public float might;
+    public float protection;
     private void Awake()
     {
         type = ItemType.Equipable;
     }
+
+    
 }

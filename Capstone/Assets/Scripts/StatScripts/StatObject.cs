@@ -13,8 +13,18 @@ public class StatObject : ScriptableObject
     public float defense;
 
 
+    
    
-   
+    public void EquipDamage(float damageMod)
+    {
+        strength += damageMod;
+    }
+    
+    public void EquipDefense(float defenseMod)
+    {
+        defense += defenseMod;  
+
+    }
 
     public void Damage(float damage)
     {

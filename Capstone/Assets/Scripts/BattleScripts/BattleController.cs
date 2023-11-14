@@ -38,6 +38,11 @@ public class BattleController : MonoBehaviour
         SceneManager.LoadScene(sceneName: "DefendCombatGameScene");
     }
 
+    public void Heal()
+    {
+        SceneManager.LoadScene(sceneName: "HealCombatMinigame");
+    }
+
     private void Update()
     {
         if (inventoryOpen && Input.GetKeyDown(KeyCode.Escape))

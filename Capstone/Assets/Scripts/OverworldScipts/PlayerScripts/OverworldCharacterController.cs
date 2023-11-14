@@ -10,17 +10,23 @@ using UnityEngine.UIElements;
 public class OverworldCharacterController : MonoBehaviour
 {
     //Variables that are public (if any)
-   
+    public StatObject stats;
+
+
     //Variables that are supposed to be serialized
     [SerializeField] private float speed;
     [SerializeField] private RectTransform menu;
     [SerializeField] private RectTransform inventory;
+    [SerializeField] private RectTransform useItem;
+    
 
     //variables that will not show up in the untiy inspector
     private Vector2 velocity = Vector2.zero;
     private Rigidbody2D rb;
     private bool menuOpen = false;
     private bool inventoryOpen = false;
+    private bool useItemMenuOpen = false;
+
 
     // Start is called before the first frame update
     void Start()
@@ -28,6 +34,8 @@ public class OverworldCharacterController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         menu.transform.localScale = Vector3.zero;
         inventory.transform.localScale = Vector3.zero;
+        useItem.transform.localScale = Vector3.zero;
+      
     }
 
     // Update is called once per frame
@@ -68,12 +76,20 @@ public class OverworldCharacterController : MonoBehaviour
                 menu.LeanScale(Vector3.zero, 0f);
             }
 
+            if(useItemMenuOpen)
+            {
+                inventoryOpen = true;
+
+                useItem.LeanScale(Vector3.zero, 0);
+            }
+
             if(inventoryOpen)
             {
                 inventoryOpen= false;
                 inventory.LeanScale(Vector3.zero, 0f);
                 
             }
+
         }
 
 
@@ -81,6 +97,13 @@ public class OverworldCharacterController : MonoBehaviour
 
     }
 
+  public void OpenItem()
+    {
+        useItemMenuOpen = true;
+        useItem.LeanScale(Vector3.one, 0);
+        inventoryOpen= false;
+    }
+    
     public void OpenInventory()
     {
         inventoryOpen = true;

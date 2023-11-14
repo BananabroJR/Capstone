@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15a127098fc89bd4298efac74393a912, type: 3}
   m_Name: WarnDownShield
   m_EditorClassIdentifier: 
-  prefab: {fileID: 1166443505797067484, guid: d431b4a03d9b50a4bb74ef79fba17dd2, type: 3}
+  prefab: {fileID: 5419362120545102561, guid: 2de25a5db499a754bb2971b2d0f1191e, type: 3}
   type: 1
   descritpion: 'This ancient shield, through the annals of time, hath journeyed and
     now, by heritage, it doth belong to thee. Alas, though, its years have rendered

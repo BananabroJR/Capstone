@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 078d27e510973144ab43ff3aa5d70756, type: 3}
   m_Name: Baby Potion
   m_EditorClassIdentifier: 
-  prefab: {fileID: 1166443505797067484, guid: 491aeb8c25943194d8fa9f0db42235c1, type: 3}
+  prefab: {fileID: 5419362120545102561, guid: f0110c95986c91b4f96bde5012d0a54d, type: 3}
   type: 0
   descritpion: 'It doth mend five HP to those valiant souls who dare partake of its
     elixir!

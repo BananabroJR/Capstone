@@ -33,8 +33,9 @@ public class DisplayInventory : MonoBehaviour
         {
             var obj = Instantiate(inventory.container[i].item.prefab, Vector3.zero, Quaternion.identity, transform);
             obj.GetComponent<RectTransform>().localPosition = GetPosition(i);
-            obj.GetComponent<TextMeshProUGUI>().text = inventory.container[i].item.name + " " + inventory.container[i].amount;
+            obj.GetComponentInChildren<TextMeshProUGUI>().text = inventory.container[i].item.name + " " + inventory.container[i].amount;
             itemsDisplayed.Add(inventory.container[i], obj);
+           
         }
 
 
@@ -46,13 +47,13 @@ public class DisplayInventory : MonoBehaviour
         {
             if (itemsDisplayed.ContainsKey(inventory.container[i]))
             {
-                itemsDisplayed[inventory.container[i]].GetComponent<TextMeshProUGUI>().text = inventory.container[i].item.name + " " + inventory.container[i].amount;
+                itemsDisplayed[inventory.container[i]].GetComponentInChildren<TextMeshProUGUI>().text = inventory.container[i].item.name + " " + inventory.container[i].amount;
             }
             else
             {
                 var obj = Instantiate(inventory.container[i].item.prefab, Vector3.zero, Quaternion.identity, transform);
                 obj.GetComponent<RectTransform>().localPosition = GetPosition(i);
-                obj.GetComponent<TextMeshProUGUI>().text = inventory.container[i].item.name + " " + inventory.container[i].amount;
+                obj.GetComponentInChildren<TextMeshProUGUI>().text = inventory.container[i].item.name + " " + inventory.container[i].amount;
                 itemsDisplayed.Add(inventory.container[i], obj);
             }
         }

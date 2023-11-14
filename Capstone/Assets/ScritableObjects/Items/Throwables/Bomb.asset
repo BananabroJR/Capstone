@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccf803d94abdb034fa8b7d3f75bb7688, type: 3}
   m_Name: Bomb
   m_EditorClassIdentifier: 
-  prefab: {fileID: 1166443505797067484, guid: 5bebe5bfffeefa94f9584c9b43299f7d, type: 3}
+  prefab: {fileID: 5419362120545102561, guid: 921c8db696dc45f40b25a4c05f8be9c4, type: 3}
   type: 2
   descritpion: 'Cast it forth, and lo, it shall burst asunder in a most wondrous
     and fiery display! May the heavens bestow their grace upon the wretched soul

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15a127098fc89bd4298efac74393a912, type: 3}
   m_Name: BeginnerSword
   m_EditorClassIdentifier: 
-  prefab: {fileID: 1166443505797067484, guid: c15217c0b814dde46b478f35989d2ce5, type: 3}
+  prefab: {fileID: 5419362120545102561, guid: c8c69563070d889439976dbb88030a8e, type: 3}
   type: 1
   descritpion: 'Behold, a blade with which all heroes commence their noble quests!
 

@@ -26,7 +26,7 @@ public class ArrowSpawner : MonoBehaviour
         //it gets set tot true in schmovement
         if(arrowAmount > 0 && ArrowSchmovment.arrowGotDestoyed) 
         {
-            SpawnArrow(Random.Range(0, 2));
+            SpawnArrow(Random.Range(0, spawners.Length));
             
             ArrowSchmovment.arrowGotDestoyed = false;
         }
