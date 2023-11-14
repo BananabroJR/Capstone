@@ -23,4 +23,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/HealCombatMinigame.unity
     guid: 8714f7ad076b7dc41a0a4be179c9d5a4
+  - enabled: 1
+    path: Assets/Scenes/AxeCombatMinigame.unity
+    guid: 05317c207c1f4754eaf62ae3bb3687fb
+  - enabled: 1
+    path: Assets/Scenes/PunchCombatGameScene.unity
+    guid: 9d9fde48014e94c4fb3dd92528256b45
   m_configObjects: {}
