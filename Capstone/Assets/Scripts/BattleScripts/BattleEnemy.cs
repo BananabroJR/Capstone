@@ -49,7 +49,7 @@ public class BattleEnemy : MonoBehaviour
 
         if(BattleController.wenToMinigame)
         {
-            Debug.Log("I defended " + defended);
+          
             int attackRNG = Random.Range(1, 10);
             if(attackRNG <= 6 ) 
             {

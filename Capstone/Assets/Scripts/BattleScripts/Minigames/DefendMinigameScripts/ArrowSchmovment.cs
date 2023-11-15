@@ -35,14 +35,14 @@ public class ArrowSchmovment : MonoBehaviour
         if(collision.gameObject.tag == "Friendly")
         {
             Destroy(gameObject);
-            Debug.Log("Aw you blocked me!");
+          
             arrowGotDestoyed= true;
             ArrowSpawner.arrowAmount--;
         }
         if(collision.gameObject.tag == "Player")
         {
             Destroy(gameObject);
-            Debug.Log("Take that you just got damaged!");
+           
             arrowGotDestoyed= true;
             ArrowSpawner.arrowAmount--;
         }

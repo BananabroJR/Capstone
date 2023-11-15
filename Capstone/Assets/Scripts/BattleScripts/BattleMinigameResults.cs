@@ -44,11 +44,6 @@ public class BattleMinigameResults : MonoBehaviour
             {
                 RunAway();
             }
-            else
-            {
-                Debug.Log("How many times are you gonna run away? I captured 17 different times!");
-            }
-
             MazeControl.wentToRun = false;
         }
 

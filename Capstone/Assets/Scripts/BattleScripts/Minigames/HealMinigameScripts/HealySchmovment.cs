@@ -22,14 +22,13 @@ public class HealySchmovment : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             Destroy(gameObject);
-            Debug.Log("You got healed!");
+           
             healyGotDestoyed = true;
             SpawnHealys.healyAmount--;
         }
         if (collision.gameObject.tag == "Enemy")
         {
             Destroy(gameObject);
-            Debug.Log("No Healies for you D:");
             healyGotDestoyed = true;
             SpawnHealys.healyAmount--;
         }

@@ -54,7 +54,7 @@ public class MazeControl : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log("YEAH TAKE THAT YOU JUST GOT COLLIDED!");
+        
 
         if (collision.gameObject.tag == "Floor")
         {
