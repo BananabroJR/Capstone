@@ -452,6 +452,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5baab42d6ab6f934ab54f498efdcb90d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerStats: {fileID: 11400000, guid: e0096ada546509649bacff52d2b64098, type: 2}
+  enemyStats: {fileID: 11400000, guid: ee234aeb06a806d4288a4f5cc1602988, type: 2}
   stats: {fileID: 11400000, guid: ee234aeb06a806d4288a4f5cc1602988, type: 2}
 --- !u!1 &366662713
 GameObject:

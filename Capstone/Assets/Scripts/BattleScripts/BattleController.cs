@@ -10,7 +10,7 @@ using UnityEditor;
 public class BattleController : MonoBehaviour
 {
 
-    
+    public static bool wenToMinigame = false;
     
 
     private bool inventoryOpen = false;
@@ -24,22 +24,26 @@ public class BattleController : MonoBehaviour
 
     public void SwordAttack()
     {
-       
+        wenToMinigame = true;
         SceneManager.LoadScene(sceneName: "SwordCombatGameScene");
+
     }
 
     public void RunAway()
     {
+        wenToMinigame = true;
         SceneManager.LoadScene(sceneName: "RunCombatGameScene");
     }
 
     public void Defend() 
     {
+        
         SceneManager.LoadScene(sceneName: "DefendCombatGameScene");
     }
 
     public void Heal()
     {
+        wenToMinigame = true;
         SceneManager.LoadScene(sceneName: "HealCombatMinigame");
     }
 

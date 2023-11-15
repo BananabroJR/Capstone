@@ -12,6 +12,8 @@ public class BattleMinigameResults : MonoBehaviour
     public BattleEnemy enemy;
     public StatObject playerStats;
     public StatObject enemyStats;
+  
+
 
     private float tempEnemyHealth;
     private bool hit = false;
@@ -53,20 +55,12 @@ public class BattleMinigameResults : MonoBehaviour
         if(BambooSpawner.wentToSword)
         {
             hit = SwordMiniGameResults(BambooSpawner.score);
-            crit = SwordCritResults(BambooSpawner.score);
+          
 
             Debug.Log(hit);
             if(hit)
             {
-                if(crit)
-                {
-                   // battleController.damage *= 2;
-                    crit = false;
-                }
-               enemyStats.Damage(playerStats.strength - enemyStats.defense);
-              
-                
-              
+               enemyStats.Damage(playerStats.strength - enemyStats.defense); 
                 hit = false;
             }
             BambooSpawner.wentToSword= false;
@@ -118,18 +112,5 @@ public class BattleMinigameResults : MonoBehaviour
         SceneManager.LoadScene(sceneName: "TestOverWorldScene");
     }
 
-    private bool SwordCritResults(int score)
-    {
-      //  if (score <= 8)
-       // {
-        //    int critChance = Random.Range(0, 9);
-         //   if (critChance == 0)
-          //  {
-           //     return true;
-
-//            }
- //       }
-
-        return false;
-    }
+  
 }
