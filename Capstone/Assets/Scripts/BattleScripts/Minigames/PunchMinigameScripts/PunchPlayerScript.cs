@@ -6,6 +6,8 @@ public class PunchPlayerScript : MonoBehaviour
     [SerializeField] private GameObject bar;
     [SerializeField] private GameObject[] bricks;
 
+    public static bool punched = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -15,8 +17,11 @@ public class PunchPlayerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       if(Input.GetKeyDown(KeyCode.Space))
+       
+
+       if(Input.GetKeyDown(KeyCode.Space) && !punched)
         {
+            punched = true;
             float accuracy = 0;
             accuracy = BarTiming();
 
@@ -31,7 +36,8 @@ public class PunchPlayerScript : MonoBehaviour
             if (!bricks[1] && accuracy >= 0.85f)
             {
                 Destroy(bricks[2]);
-            }    
+            }
+
             
         } 
     }

@@ -7,10 +7,14 @@ using UnityEngine.SceneManagement;
 
 public class Bar : MonoBehaviour
 {
+  
+
     [SerializeField] private GameObject bar;
+
     public static bool barIsFull = false;
     private bool isMoving = false;
     public static int barCount = 0;
+
 
     // Start is called before the first frame update
     void Start()
@@ -39,11 +43,7 @@ public class Bar : MonoBehaviour
             
         }
 
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            isMoving = true;
-            LeanTween.scaleY(bar, 0, 0.1f);
-        }
+      
 
         if (bar.transform.localScale.y == 1 || bar.transform.localScale.y == 0)
         {
@@ -69,7 +69,8 @@ public class Bar : MonoBehaviour
         if (bar.transform.localScale.y == 0)
         {
             barIsFull = false;
-           // barCount++;
+            barCount++;
+            PunchPlayerScript.punched = false;
 
         }
     }
