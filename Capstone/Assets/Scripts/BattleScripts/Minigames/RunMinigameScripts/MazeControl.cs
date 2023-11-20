@@ -41,10 +41,10 @@ public class MazeControl : MonoBehaviour
         rb.velocity = velocity;
 
         //Camera Scrolling
-        float step = 0.03f;
+        float step = 2f;
 
         var cameraPosition = Camera.main.gameObject.transform.position;
-        cameraPosition.x += step;
+        cameraPosition.x += step * Time.deltaTime;
         cameraPosition.y = gameObject.transform.position.y;
         Camera.main.gameObject.transform.position = cameraPosition;
 

@@ -20,5 +20,6 @@ MonoBehaviour:
     +5
 
     Defense: +0'
-  might: 5
+  might: 2
   protection: 0
+  weaponType: 0

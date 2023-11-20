@@ -9,14 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 078d27e510973144ab43ff3aa5d70756, type: 3}
-  m_Name: Baby Potion
+  m_Script: {fileID: 11500000, guid: 15a127098fc89bd4298efac74393a912, type: 3}
+  m_Name: Axe
   m_EditorClassIdentifier: 
   prefab: {fileID: 5419362120545102561, guid: f0110c95986c91b4f96bde5012d0a54d, type: 3}
-  type: 0
-  descritpion: 'It doth mend five HP to those valiant souls who dare partake of its
-    elixir!
-
-
-    HP +5'
-  restoreHealthValue: 5
+  type: 1
+  descritpion: Axe :D
+  might: 5
+  protection: 0
+  weaponType: 1

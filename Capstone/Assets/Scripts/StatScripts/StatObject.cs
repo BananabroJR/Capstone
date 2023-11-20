@@ -11,10 +11,7 @@ public class StatObject : ScriptableObject
     public float strength;
     public float magic;
     public float defense;
-
-
-    
-   
+       
     public void EquipDamage(float damageMod)
     {
         strength += damageMod;
@@ -26,10 +23,26 @@ public class StatObject : ScriptableObject
 
     }
 
+    public void UnEquipDamage(float damageMod)
+    {
+        strength -= damageMod;
+    }
+
+    public void UnEquipDefense(float defenseMod)
+    {
+        defense -= defenseMod;
+
+    }
+
     public void Damage(float damage)
     {
        
         health -= damage;
+    }
+
+    public void Heal(float restoreHealth)
+    {
+        health += restoreHealth;
     }
 
    

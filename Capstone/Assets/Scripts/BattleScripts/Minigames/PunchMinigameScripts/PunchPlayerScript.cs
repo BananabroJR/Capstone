@@ -7,11 +7,13 @@ public class PunchPlayerScript : MonoBehaviour
     [SerializeField] private GameObject[] bricks;
 
     public static bool punched = false;
+    public static bool wenToPunch = false;
+    public static int bricksDestroyed;
 
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        
+        bricksDestroyed = 0;
+        wenToPunch = true;
     }
 
     // Update is called once per frame
@@ -28,14 +30,17 @@ public class PunchPlayerScript : MonoBehaviour
             if (bricks[0] && accuracy >= 0.85f)
             {
                 Destroy(bricks[0]);
+                bricksDestroyed++;
             }
             if (!bricks[0] && accuracy >= 0.85f)
             {
                 Destroy(bricks[1]);
+                bricksDestroyed++;
             }
             if (!bricks[1] && accuracy >= 0.85f)
             {
                 Destroy(bricks[2]);
+                bricksDestroyed++;
             }
 
             

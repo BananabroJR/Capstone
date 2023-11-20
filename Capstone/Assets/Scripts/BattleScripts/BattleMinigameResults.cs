@@ -47,6 +47,29 @@ public class BattleMinigameResults : MonoBehaviour
             MazeControl.wentToRun = false;
         }
 
+        if(PunchPlayerScript.wenToPunch)
+        {
+            hit = PunchMinigameResults(PunchPlayerScript.bricksDestroyed);
+            if (hit)
+            {
+                enemyStats.Damage(playerStats.strength - enemyStats.defense);
+                hit = false;
+            }
+            PunchPlayerScript.wenToPunch = false;
+        }
+
+        if(AxePlayer.wentToAxe)
+        {
+            hit = AxeMinigameResults(AxePlayer.axePresses);
+            if (hit)
+            {
+                enemyStats.Damage(playerStats.strength - enemyStats.defense);
+                hit = false;
+            }
+            AxePlayer.axePresses = 0;
+            AxePlayer.wentToAxe = false;
+        }
+
         if(BambooSpawner.wentToSword)
         {
             hit = SwordMiniGameResults(BambooSpawner.score);
@@ -97,6 +120,66 @@ public class BattleMinigameResults : MonoBehaviour
         {
             return true;
 
+        }
+
+        return false;
+    }
+
+    private bool AxeMinigameResults(int axePresses)
+    {
+        if (axePresses >= 60)
+        {
+            return true;
+        }
+        if (axePresses >= 40)
+        {
+            int hitChance = Random.Range(0, 3);
+            if (hitChance < 0)
+            {
+                return true;
+            }
+        }
+        if(axePresses >= 30)
+        {
+            int hitChance = Random.Range(0, 1);
+            if (hitChance == 0)
+            {
+                return true;
+            }
+        }
+        if (axePresses >= 20)
+        {
+            int hitChance = Random.Range(0, 3);
+            if (hitChance == 0)
+            {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    private bool PunchMinigameResults(int bricksDestroted)
+    {
+        if(bricksDestroted == 2)
+        {
+            int hitChance = Random.Range(0, 3);
+            if (hitChance == 0)
+            {
+                return true;
+            }
+        }
+        if(bricksDestroted == 3)
+        {
+            int hitChance = Random.Range(0, 1);
+            if (hitChance == 0)
+            {
+                return true;
+            }
+        }
+        if(bricksDestroted == 4)
+        {
+            return true;
         }
 
         return false;

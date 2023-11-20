@@ -6,11 +6,12 @@ using UnityEngine.SceneManagement;
 public class AxePlayer : MonoBehaviour
 {
     private float timer = 8;
-    private int axePresses;
-    // Start is called before the first frame update
-    void Start()
+    public static int axePresses;
+    public static bool wentToAxe;
+
+    private void Start()
     {
-        
+        wentToAxe = true;
     }
 
     // Update is called once per frame

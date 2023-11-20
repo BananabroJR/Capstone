@@ -5,7 +5,8 @@ using UnityEngine;
 public class ArrowSchmovment : MonoBehaviour
 {
     public static bool arrowGotDestoyed = true;
-   
+    public StatObject player;
+    public StatObject enemy;
 
     private Vector2 velocity = Vector2.zero;
     private Rigidbody2D rb;
@@ -42,7 +43,7 @@ public class ArrowSchmovment : MonoBehaviour
         if(collision.gameObject.tag == "Player")
         {
             Destroy(gameObject);
-           
+            player.Damage(enemy.strength * 2);
             arrowGotDestoyed= true;
             ArrowSpawner.arrowAmount--;
         }

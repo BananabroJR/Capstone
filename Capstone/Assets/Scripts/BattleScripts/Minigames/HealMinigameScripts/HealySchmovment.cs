@@ -5,6 +5,7 @@ using UnityEngine;
 public class HealySchmovment : MonoBehaviour
 {
     public static bool healyGotDestoyed = true;
+    public StatObject player;
 
 
     private Vector2 velocity = Vector2.zero;
@@ -22,7 +23,7 @@ public class HealySchmovment : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             Destroy(gameObject);
-           
+            player.Heal(5);
             healyGotDestoyed = true;
             SpawnHealys.healyAmount--;
         }

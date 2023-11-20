@@ -216,6 +216,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69776a8434a18dd4a836dbcd45a5ac6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 11400000, guid: e0096ada546509649bacff52d2b64098, type: 2}
+  enemy: {fileID: 11400000, guid: ee234aeb06a806d4288a4f5cc1602988, type: 2}
 --- !u!50 &3141155689401411235
 Rigidbody2D:
   serializedVersion: 4

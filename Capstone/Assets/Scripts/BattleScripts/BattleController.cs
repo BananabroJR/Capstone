@@ -7,10 +7,19 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 using UnityEditor;
 
+public enum WeaponEquipped
+{
+    NONE,
+    SWORD,
+    AXE
+}
+
 public class BattleController : MonoBehaviour
 {
 
     public static bool wenToMinigame = false;
+
+    public static WeaponEquipped equippment = WeaponEquipped.NONE;
     
 
     private bool inventoryOpen = false;
@@ -22,7 +31,35 @@ public class BattleController : MonoBehaviour
         inventory.transform.localScale = Vector3.zero;
     }
 
-    public void SwordAttack()
+    public void Attack()
+    {
+        if(equippment == WeaponEquipped.SWORD)
+        {
+            SwordAttack();
+        }
+        if (equippment == WeaponEquipped.NONE)
+        {
+            PunchAttack();
+        }
+        if(equippment == WeaponEquipped.AXE) 
+        {
+            AxeAttack();
+        }
+    }
+
+    private void AxeAttack()
+    {
+        wenToMinigame = true;
+        SceneManager.LoadScene(sceneName: "AxeCombatMinigame");
+    }
+
+    private void PunchAttack()
+    {
+        wenToMinigame = true;
+        SceneManager.LoadScene(sceneName: "PunchCombatGameScene");
+    }
+
+    private void SwordAttack()
     {
         wenToMinigame = true;
         SceneManager.LoadScene(sceneName: "SwordCombatGameScene");
