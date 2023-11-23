@@ -28,6 +28,7 @@ public class Bar : MonoBehaviour
         Debug.Log(barCount);
         if(barCount >= 3)
         {
+            barCount = 0;
             SceneManager.LoadScene(sceneName: "TestBattleScene");
         }
 
