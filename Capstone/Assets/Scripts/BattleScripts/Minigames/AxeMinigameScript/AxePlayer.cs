@@ -22,6 +22,7 @@ public class AxePlayer : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             axePresses++;
+            TreeAnimation.treeCuts++;
             Debug.Log(axePresses);
         }
 
