@@ -12,8 +12,8 @@ public class BattleMinigameResults : MonoBehaviour
     public BattleEnemy enemy;
     public StatObject playerStats;
     public StatObject enemyStats;
-  
 
+    [SerializeField] private Animator animator;
 
     private float tempEnemyHealth;
     private bool hit = false;
@@ -53,6 +53,7 @@ public class BattleMinigameResults : MonoBehaviour
             if (hit)
             {
                 enemyStats.Damage(playerStats.strength - enemyStats.defense);
+                animator.SetTrigger("Attack");
                 hit = false;
             }
             PunchPlayerScript.wenToPunch = false;
@@ -64,6 +65,7 @@ public class BattleMinigameResults : MonoBehaviour
             if (hit)
             {
                 enemyStats.Damage(playerStats.strength - enemyStats.defense);
+                animator.SetTrigger("Attack");
                 hit = false;
             }
             AxePlayer.axePresses = 0;
@@ -73,12 +75,10 @@ public class BattleMinigameResults : MonoBehaviour
         if(BambooSpawner.wentToSword)
         {
             hit = SwordMiniGameResults(BambooSpawner.score);
-          
-
-            Debug.Log(hit);
             if(hit)
             {
-               enemyStats.Damage(playerStats.strength - enemyStats.defense); 
+                enemyStats.Damage(playerStats.strength - enemyStats.defense);
+                animator.SetTrigger("Attack");
                 hit = false;
             }
             BambooSpawner.wentToSword= false;
