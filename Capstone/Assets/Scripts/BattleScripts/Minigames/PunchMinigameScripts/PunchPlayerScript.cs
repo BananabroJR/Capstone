@@ -6,9 +6,13 @@ public class PunchPlayerScript : MonoBehaviour
     [SerializeField] private GameObject bar;
     [SerializeField] private GameObject[] bricks;
 
+    public BrickAnimations particle1;
+    public BrickAnimations particle2;
+    public BrickAnimations particle3;
     public static bool punched = false;
     public static bool wenToPunch = false;
     public static int bricksDestroyed;
+    private IEnumerator co;
 
     private void Start()
     {
@@ -29,17 +33,23 @@ public class PunchPlayerScript : MonoBehaviour
 
             if (bricks[0] && accuracy >= 0.85f)
             {
-                Destroy(bricks[0]);
+                co = particle1.PlayParteicle();
+                 StartCoroutine(co);
+              
                 bricksDestroyed++;
             }
-            if (!bricks[0] && accuracy >= 0.85f)
+            if (!bricks[0] && bricks[1] && accuracy >= 0.85f)
             {
-                Destroy(bricks[1]);
+                co = particle2.PlayParteicle();
+                StartCoroutine(co);
+                
                 bricksDestroyed++;
             }
             if (!bricks[1] && accuracy >= 0.85f)
             {
-                Destroy(bricks[2]);
+                co = particle3.PlayParteicle();
+                StartCoroutine(co);
+              
                 bricksDestroyed++;
             }
 

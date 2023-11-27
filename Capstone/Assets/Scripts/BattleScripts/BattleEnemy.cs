@@ -11,6 +11,7 @@ public class BattleEnemy : MonoBehaviour
     public static float enemyAmount = 1;
     public StatObject playerStats;
     public StatObject enemyStats;
+    [SerializeField] private Animator animator;
 
     private bool hitTheAttack = false;
     public static bool defended = false;
@@ -47,20 +48,21 @@ public class BattleEnemy : MonoBehaviour
     {
 
 
-        if(BattleController.wenToMinigame)
+        if (BattleMinigameResults.wenToMinigame == true)
         {
           
             int attackRNG = Random.Range(1, 10);
             if(attackRNG <= 6 ) 
             {
                 Attack();
+                animator.SetTrigger("Attack");
             }
             else
             {
                 Defend();
             }
 
-            BattleController.wenToMinigame= false;
+            BattleMinigameResults.wenToMinigame = false; 
         }
     }
 
@@ -78,7 +80,6 @@ public class BattleEnemy : MonoBehaviour
         if(hit <= 6) 
         {
             float damage = enemyStats.strength - playerStats.defense;
-
             playerStats.Damage(damage);
         }
     }

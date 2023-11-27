@@ -22,7 +22,7 @@ public class DialougeManager : MonoBehaviour
 
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Space) && isActive)
+        if(Input.GetKeyDown(KeyCode.Z) && isActive)
         {
             NewMessage();
         }

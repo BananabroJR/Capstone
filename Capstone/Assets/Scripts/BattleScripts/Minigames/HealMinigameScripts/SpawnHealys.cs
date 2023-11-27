@@ -31,6 +31,7 @@ public class SpawnHealys : MonoBehaviour
         if (healyAmount <= 0)
         {
             SceneManager.LoadScene(sceneName: "TestBattleScene");
+           BattleMinigameResults.wenToMinigame = true;
         }
     }
 

@@ -12,7 +12,7 @@ public class BattleMinigameResults : MonoBehaviour
     public BattleEnemy enemy;
     public StatObject playerStats;
     public StatObject enemyStats;
-
+    public static bool wenToMinigame = false;
     [SerializeField] private Animator animator;
 
     private float tempEnemyHealth;
@@ -45,6 +45,7 @@ public class BattleMinigameResults : MonoBehaviour
                 RunAway();
             }
             MazeControl.wentToRun = false;
+            wenToMinigame = true;
         }
 
         if(PunchPlayerScript.wenToPunch)
@@ -57,6 +58,7 @@ public class BattleMinigameResults : MonoBehaviour
                 hit = false;
             }
             PunchPlayerScript.wenToPunch = false;
+            wenToMinigame = true;
         }
 
         if(AxePlayer.wentToAxe)
@@ -70,6 +72,7 @@ public class BattleMinigameResults : MonoBehaviour
             }
             AxePlayer.axePresses = 0;
             AxePlayer.wentToAxe = false;
+            wenToMinigame = true;
         }
 
         if(BambooSpawner.wentToSword)
@@ -83,6 +86,7 @@ public class BattleMinigameResults : MonoBehaviour
             }
             BambooSpawner.wentToSword= false;
             BambooSpawner.score = 0;
+            wenToMinigame = true;
         }
     }
 

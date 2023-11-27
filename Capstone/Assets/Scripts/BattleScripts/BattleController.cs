@@ -17,7 +17,7 @@ public enum WeaponEquipped
 public class BattleController : MonoBehaviour
 {
 
-    public static bool wenToMinigame = false;
+ 
 
     public static WeaponEquipped equippment = WeaponEquipped.NONE;
     
@@ -49,26 +49,24 @@ public class BattleController : MonoBehaviour
 
     private void AxeAttack()
     {
-        wenToMinigame = true;
+     
         SceneManager.LoadScene(sceneName: "AxeCombatMinigame");
     }
 
     private void PunchAttack()
     {
-        wenToMinigame = true;
+      
         SceneManager.LoadScene(sceneName: "PunchCombatGameScene");
     }
 
     private void SwordAttack()
     {
-        wenToMinigame = true;
         SceneManager.LoadScene(sceneName: "SwordCombatGameScene");
 
     }
 
     public void RunAway()
     {
-        wenToMinigame = true;
         SceneManager.LoadScene(sceneName: "RunCombatGameScene");
     }
 
@@ -80,7 +78,6 @@ public class BattleController : MonoBehaviour
 
     public void Heal()
     {
-        wenToMinigame = true;
         SceneManager.LoadScene(sceneName: "HealCombatMinigame");
     }
 

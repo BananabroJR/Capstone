@@ -23,7 +23,7 @@ public class AxePlayer : MonoBehaviour
         {
             axePresses++;
             TreeAnimation.treeCuts++;
-            Debug.Log(axePresses);
+           
         }
 
 
