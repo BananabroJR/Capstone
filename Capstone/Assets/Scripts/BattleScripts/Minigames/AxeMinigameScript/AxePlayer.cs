@@ -8,7 +8,7 @@ public class AxePlayer : MonoBehaviour
     private float timer = 8;
     public static int axePresses;
     public static bool wentToAxe;
-
+    [SerializeField] private Animator animator;
     private void Start()
     {
         wentToAxe = true;
@@ -21,6 +21,7 @@ public class AxePlayer : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
+            animator.SetTrigger("Attack");
             axePresses++;
             TreeAnimation.treeCuts++;
            

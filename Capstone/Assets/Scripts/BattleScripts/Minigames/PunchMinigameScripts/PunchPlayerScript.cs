@@ -5,6 +5,7 @@ public class PunchPlayerScript : MonoBehaviour
 {
     [SerializeField] private GameObject bar;
     [SerializeField] private GameObject[] bricks;
+    [SerializeField] private Animator animator;
 
     public BrickAnimations particle1;
     public BrickAnimations particle2;
@@ -28,6 +29,7 @@ public class PunchPlayerScript : MonoBehaviour
        if(Input.GetKeyDown(KeyCode.Space) && !punched)
         {
             punched = true;
+            animator.SetTrigger("Attack");
             float accuracy = 0;
             accuracy = BarTiming();
 
