@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using UnityEditor;
-using UnityEditor.Build;
 using UnityEngine;
 
 public class BattleEnemy : MonoBehaviour
@@ -13,7 +12,7 @@ public class BattleEnemy : MonoBehaviour
     public StatObject enemyStats;
     [SerializeField] private Animator animator;
 
-    private bool hitTheAttack = false;
+   
     public static bool defended = false;
 
 

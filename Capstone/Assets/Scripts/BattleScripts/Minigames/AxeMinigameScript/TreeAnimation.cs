@@ -5,7 +5,7 @@ using UnityEngine;
 public class TreeAnimation : MonoBehaviour
 {
     public static float treeCuts;
-    private float speed = 5f;
+  
     private Rigidbody2D rb;
     private Vector3 rotation = Vector3.zero;
 

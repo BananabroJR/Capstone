@@ -10,8 +10,7 @@ public class HealySchmovment : MonoBehaviour
 
     private Vector2 velocity = Vector2.zero;
     private Rigidbody2D rb;
-    private float speed = 5;
-
+ 
     // Start is called before the first frame update
     void Start()
     {

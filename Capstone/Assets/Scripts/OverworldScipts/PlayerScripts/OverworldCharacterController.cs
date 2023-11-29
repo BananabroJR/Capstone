@@ -27,9 +27,9 @@ public class OverworldCharacterController : MonoBehaviour
     private Rigidbody2D rb;
     private bool menuOpen = false;
     private bool inventoryOpen = false;
-    private bool useItemMenuOpen = false;
+ 
     bool faceRight = true;
-    bool faceUp = false;
+  
 
 
     // Start is called before the first frame update
@@ -74,14 +74,14 @@ public class OverworldCharacterController : MonoBehaviour
         {
             animator.SetBool("FaceUp", false);
             animator.SetBool("FaceRight", false);
-            faceUp = false;
+          
             // faceRight = false;
         }
         else
         {
             animator.SetBool("FaceUp", true);
             animator.SetBool("FaceRight", false);
-            faceUp = true;
+         
             // faceRight = false;
         }
 
@@ -89,7 +89,7 @@ public class OverworldCharacterController : MonoBehaviour
         {
             animator.SetBool("FaceRight", true);
             animator.SetBool("FaceUp", false);
-            faceUp = false;
+           
             // faceRight = true;
         }
 

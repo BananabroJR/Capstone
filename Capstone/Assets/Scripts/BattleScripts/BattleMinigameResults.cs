@@ -17,9 +17,8 @@ public class BattleMinigameResults : MonoBehaviour
 
     private float tempEnemyHealth;
     private bool hit = false;
-    private bool crit = false;
-    private bool ran = false;
 
+  
 
     // Start is called before the first frame update
     void Start()

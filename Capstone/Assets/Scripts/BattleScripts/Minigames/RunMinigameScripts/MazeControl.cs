@@ -19,7 +19,7 @@ public class MazeControl : MonoBehaviour
     public static bool wentToRun;
     private float speed = 5;
     bool faceRight = true;
-    bool faceUp = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -62,14 +62,13 @@ public class MazeControl : MonoBehaviour
         {
             animator.SetBool("FaceUp", false);
             animator.SetBool("FaceRight", false);
-            faceUp = false;
+           
             // faceRight = false;
         }
         else
         {
             animator.SetBool("FaceUp", true);
             animator.SetBool("FaceRight", false);
-            faceUp = true;
             // faceRight = false;
         }
 
@@ -77,7 +76,6 @@ public class MazeControl : MonoBehaviour
         {
             animator.SetBool("FaceRight", true);
             animator.SetBool("FaceUp", false);
-            faceUp = false;
             // faceRight = true;
         }
 
