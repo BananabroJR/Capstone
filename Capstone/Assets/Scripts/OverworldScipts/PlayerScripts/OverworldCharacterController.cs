@@ -15,9 +15,9 @@ public class OverworldCharacterController : MonoBehaviour
 
     //Variables that are supposed to be serialized
     [SerializeField] private float speed;
-    [SerializeField] private RectTransform menu;
+
     [SerializeField] private RectTransform inventory;
-    [SerializeField] private RectTransform useItem;
+ 
     [SerializeField] private Animator animator;
     [SerializeField] private SpriteRenderer spriteRenderer;
 
@@ -36,9 +36,9 @@ public class OverworldCharacterController : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        menu.transform.localScale = Vector3.zero;
+   
         inventory.transform.localScale = Vector3.zero;
-        useItem.transform.localScale = Vector3.zero;
+        
       
     }
 
@@ -101,29 +101,17 @@ public class OverworldCharacterController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Z)) 
         {
             menuOpen = true;
-            menu.LeanScale(Vector3.one, 0);
+            inventory.LeanScale(Vector3.one, 0);
         }
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             if(!inventoryOpen)
             {
                 menuOpen = false;
-                menu.LeanScale(Vector3.zero, 0f);
-            }
-
-            if(useItemMenuOpen)
-            {
-                inventoryOpen = true;
-
-                useItem.LeanScale(Vector3.zero, 0);
-            }
-
-            if(inventoryOpen)
-            {
-                inventoryOpen= false;
                 inventory.LeanScale(Vector3.zero, 0f);
-                
             }
+
+          
 
         }
 
@@ -133,12 +121,7 @@ public class OverworldCharacterController : MonoBehaviour
     }
 
  
-  public void OpenItem()
-    {
-        useItemMenuOpen = true;
-        useItem.LeanScale(Vector3.one, 0);
-        inventoryOpen= false;
-    }
+ 
     
     public void OpenInventory()
     {
