@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -20,7 +21,9 @@ public class OverworldCharacterController : MonoBehaviour
  
     [SerializeField] private Animator animator;
     [SerializeField] private SpriteRenderer spriteRenderer;
-
+    [SerializeField] private StatObject enemyStats;
+    public GameObject[] enemies;
+    public static int enemyNum;
 
     //variables that will not show up in the untiy inspector
     private Vector2 velocity = Vector2.zero;
@@ -39,7 +42,10 @@ public class OverworldCharacterController : MonoBehaviour
    
         inventory.transform.localScale = Vector3.zero;
         
-      
+      if(stats.health <= 0)
+        {
+            stats.health = 5;
+        }
     }
 
     // Update is called once per frame
@@ -98,7 +104,7 @@ public class OverworldCharacterController : MonoBehaviour
         if (velocity.x < 0 && faceRight) Flip();
 
         //Open Menu
-        if (Input.GetKeyDown(KeyCode.Z)) 
+        if (Input.GetKeyDown(KeyCode.X)) 
         {
             menuOpen = true;
             inventory.LeanScale(Vector3.one, 0);
@@ -115,7 +121,23 @@ public class OverworldCharacterController : MonoBehaviour
 
         }
 
+        if(BattleEnemy.enemyWasDestroyed)
+        {
+            for(int i = 0; i < enemies.Length; i++)
+            {
+                if (enemies[i].GetComponent<OverworldEnemy>())
+                {
+                    if(enemies[i].GetComponent<OverworldEnemy>().count == enemyNum)
+                    {
+                        Destroy(enemies[i]);
+                        enemyStats.health = 5;
 
+                    }
+                }
+            }
+            
+            BattleEnemy.enemyWasDestroyed = false;
+        }
 
 
     }
@@ -131,9 +153,15 @@ public class OverworldCharacterController : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        if(collision.gameObject.GetComponent<OverworldEnemy>() != null)
+        {
+
+            enemyNum = collision.gameObject.GetComponent<OverworldEnemy>().count;      
+            SceneManager.LoadScene(sceneName: "TestBattleScene");
+        }
+
         if (collision.gameObject.tag == "Enemy")
         {
-            SceneManager.LoadScene(sceneName: "TestBattleScene");
         }
 
     }

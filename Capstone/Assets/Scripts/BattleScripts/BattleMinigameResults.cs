@@ -18,7 +18,7 @@ public class BattleMinigameResults : MonoBehaviour
     private float tempEnemyHealth;
     private bool hit = false;
 
-  
+    public static GameObject tempEnemy;
 
     // Start is called before the first frame update
     void Start()
@@ -30,10 +30,10 @@ public class BattleMinigameResults : MonoBehaviour
     void Update()
     {
        // Debug.Log(enemyStats.Health);
-        if(BattleEnemy.enemyAmount <= 0)
+        if(BattleEnemy.enemyWasDestroyed)
         {
             SceneManager.LoadScene(sceneName: "TestOverWorldScene");
-           
+          
             
         }
 

@@ -7,7 +7,8 @@ using UnityEngine;
 public class BattleEnemy : MonoBehaviour
 {
    
-    public static float enemyAmount = 1;
+    
+    public static bool enemyWasDestroyed = false;
     public StatObject playerStats;
     public StatObject enemyStats;
     [SerializeField] private Animator animator;
@@ -39,7 +40,7 @@ public class BattleEnemy : MonoBehaviour
         if(stats.health <= 0)
         {
            Destroy(gameObject);
-            enemyAmount--;
+            enemyWasDestroyed = true;
         }
     }
 

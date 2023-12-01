@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15a127098fc89bd4298efac74393a912, type: 3}
+  m_Name: BrokenAxe
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 5419362120545102561, guid: 6ab71d1be56f3034b8040d298fee576d, type: 3}
+  type: 1
+  descritpion: Verily, this axe hath wrought the deforestation of our realm, aye,
+    the axe that hath laid waste to our wooded domain.
+  might: 20000
+  protection: 0
+  weaponType: 1
