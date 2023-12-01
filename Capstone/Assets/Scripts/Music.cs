@@ -27,5 +27,10 @@ public class Music : MonoBehaviour
         {
             Music.instance.GetComponent<AudioSource>().Pause();
         }
+        else
+        {
+
+            Music.instance.GetComponent<AudioSource>().Play();
+        }
     }
 }
