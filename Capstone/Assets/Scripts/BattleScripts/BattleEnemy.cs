@@ -22,11 +22,6 @@ public class BattleEnemy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-            if (defended)
-            {
-                enemyStats.defense /= 2;
-                defended = false;
-            }
         
     }
 
@@ -47,6 +42,11 @@ public class BattleEnemy : MonoBehaviour
    private void Action()
     {
 
+         if (defended)
+         {
+            enemyStats.defense /= 2;
+            defended = false;
+         }
 
         if (BattleMinigameResults.wenToMinigame == true)
         {
